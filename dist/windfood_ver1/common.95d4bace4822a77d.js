@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwindfood_ver1=self.webpackChunkwindfood_ver1||[]).push([[592],{2340:(s,e,o)=>{o.d(e,{N:()=>n});const n={production:!1,baseUrl:"http://localhost:7000/"}}}]);

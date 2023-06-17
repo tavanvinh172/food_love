@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <h2 [ngClass]="{'text-center' : !isDelete, 'text-start' : isDelete}">{{title}}</h2>
+            <p [ngClass]="{'text-center' : !isDelete, 'text-start' : isDelete}">{{subtitle}}</p>
+        
+            <div [ngClass]="{'button-content d-flex align-items-center justify-content-center' : !isDelete, 'd-flex align-items-center justify-content-end' : isDelete}">
+                <button mat-raised-button color="primary" (click)="onConfirm()">{{buttonConfirm}}</button>
+                <button mat-raised-button style="color: #000;" (click)="onClose()">{{buttonCancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

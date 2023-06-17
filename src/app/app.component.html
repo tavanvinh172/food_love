@@ -1,0 +1,89 @@
+<div class="d-flex" id="wrapper">
+  <mat-card>
+    <mat-card-content>
+    <img class="sidebar-heading" src="../assets/logo.png" style="width: 300px;">
+    <div class="list-group list-group-flush">
+      <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-white"><mat-icon>dashboard</mat-icon>Trang chủ</a>
+      <a routerLink="/products" class="list-group-item list-group-item-action bg-white"><mat-icon>inbox</mat-icon>Sản phẩm</a>
+      <mat-expansion-panel [class.mat-elevation-z0]="true">
+        <mat-expansion-panel-header class="bg-white">
+          <mat-icon>collections_bookmark</mat-icon>Thực đơn
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item routerLink="#" class="bg-white">
+            <span>Thêm thực đơn</span>
+          </a>
+          <a mat-list-item routerLink="#" class="bg-white">
+            <span>Danh sách combo</span>
+          </a>
+          <a mat-list-item routerLink="#" class="bg-white">
+            <span>Danh sách thực đơn</span>
+          </a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel [class.mat-elevation-z0]="true" class="bg-white">
+        <mat-expansion-panel-header>
+          <mat-icon>library_books</mat-icon>Đơn hàng
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a mat-list-item routerLink="#">Spring</a>
+          <a mat-list-item routerLink="#">Hibernate</a>
+          <a mat-list-item routerLink="#">Struts</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+      <a href="#" class="list-group-item list-group-item-action bg-white"><mat-icon>supervisor_account</mat-icon>Khách hàng</a>
+      <a href="#" class="list-group-item list-group-item-action bg-white"><mat-icon>spa</mat-icon>Mua sắm</a>
+    </div>
+  </mat-card-content>
+  </mat-card>
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="box-container">
+          <div class="box">
+            <div class="box-button">
+              <span class="toolbar-item-spacer"></span>
+              <button mat-icon-button matTooltip="Like">
+                  <mat-icon>favorite</mat-icon>
+              </button>
+              <button mat-icon-button matTooltip="Share">
+                  <mat-icon>share</mat-icon>
+              </button>
+              <button mat-icon-button matTooltip="Notifications">
+                  <mat-icon>notifications</mat-icon>
+              </button>
+          </div>
+          </div>
+            <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Sidenav 2 -->
+
+
+
+
+<!-- <div id="page-content-wrapper">
+  <div class="container-fluid">
+      <div class="box-container">
+        <div class="box">
+          <div class="box-button">
+            <span class="toolbar-item-spacer"></span>
+            <button mat-icon-button matTooltip="Like">
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Share">
+                <mat-icon>share</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Notifications">
+                <mat-icon>notifications</mat-icon>
+            </button>
+        </div>
+        </div>
+          <router-outlet></router-outlet>
+      </div>
+    </div>
+</div> -->
+
+<!-- <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>  
+<app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-body> -->
