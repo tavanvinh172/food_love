@@ -39,6 +39,7 @@ export class AddProductDialogComponent {
         foodId: null,
         foodName: null,
         price: null, 
+        importPrice: null,
         quantity: null,
         urlImg: null,
         description: null,
@@ -56,6 +57,7 @@ export class AddProductDialogComponent {
          onConfirm: () => {
           let data = this.form?.getRawValue() as ProductModel;
           data.urlImg = this.imageSrc;
+          data.price = 12000;
           this.service.addOrEditFood(data).subscribe({
             next: (response) => {
               if(response){

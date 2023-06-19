@@ -3,6 +3,7 @@ export class ProductModel {
     foodName?: string;
     quantity?: number;
     price?: number;
+    importPrice?: number;
     urlImg?: string;
     createDate?: Date;
     description?: string;
