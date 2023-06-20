@@ -100,3 +100,16 @@ mat-card-content{
 }
 
 // Sidenav 2
+
+.navbar{
+  height: 100px;
+  .navbar-nav{
+    margin-left: 10%;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .nav-item{
+    color: #ffff;
+    font-size: 17px;
+  }  
+}

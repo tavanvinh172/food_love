@@ -35,20 +35,29 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.service.loginUser(this.form?.value).subscribe(
-      (it) => {
-        localStorage.setItem('token', it);
-        this.service.getCurrentUser().subscribe(
-          value => {
-            console.log(value);
-            // ADMIN
-            if(value[0]?.role == 0){
-              this.router.navigate(['dashboard']);
-            }
-          }
-        )
-      }
-    )
+    if(this.form?.get('username')?.value === 'admin' && this.form?.get('password')?.value === 'admin'){
+      localStorage.setItem('role', 'ADMIN')
+      this.router.navigate(['dashboard']);
+    }else if(this.form?.get('username')?.value === 'nv01' && this.form?.get('password')?.value === 'nv01'){
+      localStorage.setItem('role', 'NV')
+    }
+    // this.service.loginUser(this.form?.value).subscribe(
+    //   (it) => {
+    //     localStorage.setItem('token', it);
+    //     this.service.getCurrentUser().subscribe(
+    //       value => {
+    //         console.log(value);
+    //         // ADMIN
+    //         if(value?.role == 0){
+    //           localStorage.setItem('role', 'ADMIN')
+    //           this.router.navigate(['dashboard']);
+    //         }else{
+    //           localStorage.setItem('role', 'NV')
+    //         }
+    //       }
+    //     )
+    //   }
+    // )
   }
 
 }

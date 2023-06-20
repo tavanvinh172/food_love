@@ -28,6 +28,10 @@ export class AppComponent {
     return !!localStorage.getItem('token');
   }
 
+  getCurrentRole(){
+    return localStorage.getItem('role');
+  }
+
   onToggleSideNav(data: SideNavToggle): void{
     this.screenWidth = data.screenWidth;
     this.isSideNavCollapsed = data.collapsed;
