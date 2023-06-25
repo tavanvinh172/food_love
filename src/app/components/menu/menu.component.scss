@@ -1,0 +1,35 @@
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+mat-card{
+    overflow: auto;
+    height: 100%;
+}
+
+.tab-container{
+    ::ng-deep{
+        .mdc-tab__text-label{
+            color: #000;
+        }
+
+        .mdc-tab__text-label{
+            padding: 40px;
+            color: #000;
+        }
+
+        .mdc-tab__text-label:active{
+        }
+
+        .mdc-tab-indicator{
+            background-color: #D9D9D9;
+        }
+    }
+}

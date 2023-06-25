@@ -1,0 +1,28 @@
+.title{
+    padding: 6px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px solid #000;
+}
+
+table{
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    border-spacing: 20px;
+    thead{
+        border-bottom: 1px solid #000;
+    }
+    tr{
+        margin-bottom: 20px;
+    }
+    td { padding: 10px; }
+    img{
+        width: 60px;
+        height: 60px;
+    }
+
+    input{
+        border: none;
+    }
+}

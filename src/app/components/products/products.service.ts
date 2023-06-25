@@ -9,6 +9,12 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductsService {
 
+  private items = new BehaviorSubject([] as any);
+
+  public items$ = this.items.asObservable();
+
+  private itemCount = 0;
+
   private baseUrl = environment.baseUrl + 'api/foods';
 
   private searchTerm = new BehaviorSubject<string>('');
@@ -17,6 +23,19 @@ export class ProductsService {
 
   updateSearchTerm(term: string){
     this.searchTerm.next(term);
+  }
+
+  addToCart(){
+    let currentItems = localStorage.getItem('products');
+    let productArr = JSON.parse(currentItems!) || [];
+    // currentItems.push(item);
+    this.items.next(productArr);
+    this.itemCount++;
+  }
+
+  // a method to get the current item count
+  getItemCount() {
+    return this.itemCount;
   }
 
   getSearchTerm() {

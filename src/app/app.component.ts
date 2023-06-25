@@ -1,5 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { navbarData } from './navigation';
+import { Router, RouterLinkActive } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { ProductsService } from './components/products/products.service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { CartComponent } from './components/cart/cart.component';
 
 
 interface SideNavToggle{
@@ -16,12 +21,30 @@ export class AppComponent {
   title = 'windfood_ver1';
 
   isSideNavCollapsed = false;
+
+  numberOfItems?: number = 0;
+
   screenWidth = 0;
 
   dataStorage = localStorage.getItem('token');
 
-  ngOnInit(){
+  constructor(private service: ProductsService, private dialog: MatDialog){
 
+  }
+
+  ngOnInit(){
+    this.service.items$.subscribe(items =>{
+      this.numberOfItems = items.length;
+    })
+  }
+
+  navigateToCart(){
+    this.dialog.open(CartComponent,
+      {
+        width: '800px',
+        height: '550px'
+      }
+    )
   }
 
   isLogin() : boolean{

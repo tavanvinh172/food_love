@@ -1,0 +1,16 @@
+.mat-mdc-tab-labels{
+    padding: 0;
+    background-color: #B0D4F5;
+    &:active{
+        padding: 0;
+        background-color: #508FF4;
+    }
+    
+}
+
+.mdc-tab-indicator{
+    display: none;
+}
+
+.mdc-tab__content{
+}

@@ -1,0 +1,87 @@
+<div class="container" style="margin-top: 10%;">
+    <mat-card class="mt-3">
+        <mat-tab-group #tabGroup justify="between" class="tab-container">
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Tất cả<br/><br/>10 đơn hàng 
+                </ng-template>
+                <ng-template matTabContent>
+                        <mat-card-content>
+                            <div class="container">
+                                <!-- <form class="row" [formGroup]="form!">
+                                    <mat-form-field class="col-md-3 col-lg-3">
+                                        <mat-label>Mã đơn hàng</mat-label>
+                                        <mat-select  formControlName = "id" >
+                                            <mat-option></mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                    <mat-form-field class="col-md-3 col-lg-3">
+                                        <mat-label>Nhập mã đơn hàng</mat-label>
+                                        <input type="text" formControlName = "id">
+                                    </mat-form-field>
+                                    <mat-form-field class="col-md-3 col-lg-3">
+                                        <mat-label>Choose a date</mat-label>
+                                        <input  formControlName = "date" matInput [matDatepicker]="picker">
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker">
+                                          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                </form> -->
+                            </div>
+                        </mat-card-content>
+                </ng-template>          
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Chờ xác nhận<br/><br/>2 đơn hàng 
+                </ng-template>                
+              <ng-template matTabContent>
+                    <mat-card-content>
+                        <!-- <file-management-tab-second></file-management-tab-second> -->
+                    </mat-card-content>
+              </ng-template>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Đang chuẩn bị<br/><br/>4 đơn hàng 
+                </ng-template>                
+                <ng-template matTabContent>
+                        <mat-card-content>
+                            <!-- <file-management-tab-third></file-management-tab-third> -->
+                        </mat-card-content>
+                </ng-template>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Đang giao hàng<br/><br/>4 đơn hàng 
+                </ng-template>     
+                <ng-template matTabContent>
+                        <mat-card-content>
+                            <!-- <file-management-tab-third></file-management-tab-third> -->
+                        </mat-card-content>
+                </ng-template>
+            </mat-tab>
+            <mat-tab >
+                <ng-template mat-tab-label>
+                    Đã giao hàng<br/><br/>4 đơn hàng 
+                </ng-template>     
+                <ng-template matTabContent>
+                        <mat-card-content>
+                            <!-- <file-management-tab-third></file-management-tab-third> -->
+                        </mat-card-content>
+                </ng-template>
+            </mat-tab>
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    Đã huỷ<br/><br/>4 đơn hàng 
+                </ng-template>     
+                <ng-template matTabContent>
+                        <mat-card-content>
+                            <!-- <file-management-tab-third></file-management-tab-third> -->
+                        </mat-card-content>
+                </ng-template>
+            </mat-tab>
+        </mat-tab-group>
+</mat-card>
+</div>

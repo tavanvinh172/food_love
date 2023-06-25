@@ -20,6 +20,7 @@ export class LoginService {
   }
 
   getCurrentUser():Observable<Person>{
-    return this.http.get<Person>(this.baseUrl);    
+    let url = this.baseUrl + '/get-current-user';
+    return this.http.get<Person>(url);    
   }
 }

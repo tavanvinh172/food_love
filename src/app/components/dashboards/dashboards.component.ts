@@ -38,6 +38,10 @@ export class DashboardsComponent implements OnInit {
 
   }
 
+  getCurrentRole(){
+    return localStorage.getItem('role');
+  }
+  
   ngOnInit() {
     this.options = this.dashboardService.buildBarChart('Biểu đồ doanh thu',
       ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Thángs 9', 'Tháng 10','Tháng 11', 'Tháng 12'], '', 'Doanh Thu', [10, 2, 4, 0, 0, 10, 2, 4, 0, 0, 32,23]);

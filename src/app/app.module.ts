@@ -22,8 +22,11 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import HC_exporting from 'highcharts/modules/exporting';
 import { ToastrModule, provideToastr } from 'ngx-toastr';
 import { ConfirmDialoggComponent } from './common/confirm-dialogg/confirm-dialogg.component';
-import { EditProductComponent } from './components/products/edit-product/edit-product.component';
-import { FilterByPipe } from './common/filter-by.pipe';
+import { CartComponent } from './components/cart/cart.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { PaymentDialogComponent } from './components/payment/payment-dialog/payment-dialog.component';
+import { ConfirmDialogComponent } from './components/payment/confirm-dialog/confirm-dialog.component';
+import { BannerComponent } from './components/banner/banner.component';
 HC_exporting(Highcharts);
 
 @NgModule({
@@ -33,6 +36,9 @@ HC_exporting(Highcharts);
     SidenavComponent,
     BodyComponent,
     ConfirmDialoggComponent,
+    CartComponent,
+    PaymentDialogComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     AppRoutingModule,

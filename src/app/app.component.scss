@@ -113,3 +113,19 @@ mat-card-content{
     font-size: 17px;
   }  
 }
+
+.content{
+  position: relative;
+
+  .item{
+    position: absolute;
+    color: #FFE;
+    top: 0px;
+    left: 29px;
+    padding: 2px;
+    padding-right: 7px;
+    padding-left: 7px;
+    background-color: red;
+    border-radius: 24px;
+  }
+}

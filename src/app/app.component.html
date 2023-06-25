@@ -21,16 +21,7 @@
           </a>
         </mat-nav-list>
       </mat-expansion-panel>
-      <mat-expansion-panel [class.mat-elevation-z0]="true" class="bg-white">
-        <mat-expansion-panel-header>
-          <mat-icon>library_books</mat-icon>Đơn hàng
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item routerLink="#">Spring</a>
-          <a mat-list-item routerLink="#">Hibernate</a>
-          <a mat-list-item routerLink="#">Struts</a>
-        </mat-nav-list>
-      </mat-expansion-panel>
+      <a routerLink="/sales" class="list-group-item list-group-item-action bg-white"><mat-icon>library_books</mat-icon>Đơn hàng</a>
       <a href="#" class="list-group-item list-group-item-action bg-white"><mat-icon>supervisor_account</mat-icon>Khách hàng</a>
       <a href="#" class="list-group-item list-group-item-action bg-white"><mat-icon>spa</mat-icon>Mua sắm</a>
     </div>
@@ -61,78 +52,89 @@
 
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-dark" *ngIf="getCurrentRole()">
-  <img src="../assets/icons/social.png" alt="" style="width: 80px; height: 80px; object-fit: cover; margin-left: 40px;">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link mr-5" href="#">Trang chủ</a>
-      <a class="nav-item nav-link mr-5" href="#">Menu</a>
-      <a class="nav-item nav-link mr-5" href="#">Liên hệ</a>
-    </div>
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#">
-        <i class="fas fa-shopping-cart" style="padding: 5px; background-color: #fff; color: #000; border-radius: 10px;"></i>
-      </a>
-      <a class="nav-item nav-link mr-5" href="#"><i style="padding: 5px 5px 5px 40px; background-color: #fff; color: #000; border-radius: 10px;" class="fas fa-shopping-cart"></i></a>
-    </div>
-  </div>
-</nav>
-
-<!-- Body here -->
-<div class="container" style="width: 100vh; height: 100vh;"></div>
-<!-- Body here -->
-
-
-
-<!-- Footer -->
-<footer class="text-center text-lg-start bg-white text-muted" *ngIf="getCurrentRole()">
-
-  <!-- Section: Links  -->
-  <section class="bg-dark">
-    <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
-      <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-md-6 col-lg-6 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="text-uppercase mb-4" style="color: #fff; font-size: 13px;">
-            Liên hệ với chúng tôi
-          </h6>
-          <div style="width: 200px;padding: 10px 0 10px 10px; border-radius: 16px; background-color: #fff;">
-            <mat-icon>email</mat-icon> foodlove@gmail.com
-          </div>
-          <div style="margin-top: 10px; width: 200px;padding: 10px 0 10px 10px; border-radius: 16px; background-color: #fff;">
-            <mat-icon>phone</mat-icon> 09165483241
-          </div>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-6 col-lg-6 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="text-center mb-4" style="color: #fff; font-size: 13px;">
-            Mạng xã hội của chúng tôi
-          </h6>
-          <div class="d-flex align-items-center justify-content-center">
-            <img src="../assets/icons/instagram.png" style="width: 50px; height: 50x; margin-right: 10px; object-fit: cover;" alt="">
-            <img src="../assets/icons/social.png" style="width: 50px; height: 50x; margin-right: 10px; object-fit: cover;" alt="">
-            <img src="../assets/icons/twitter.png" style="width: 50px; height: 50x;  margin-right: 10px;object-fit: cover;" alt="">
-          </div>
-        </div>
+<div *ngIf="getCurrentRole() === 'NV'">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <img src="../assets/group.png" alt="" style="width: 80px; height: 80px; object-fit: cover; margin-left: 40px;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link mr-5" [routerLink]="''">Trang chủ</a>
+        <a class="nav-item nav-link mr-5" [routerLink]="'/menu'" [routerLinkActive]="'menu-active'">Menu</a>
+        <a class="nav-item nav-link mr-5" [routerLink]="'/banner'">Liên hệ</a>
       </div>
-      <!-- Grid row -->
+      <div class="navbar-nav">
+        <div class="content">
+          <a class="nav-item nav-link" (click)="navigateToCart()">
+            <i class="fas fa-shopping-cart" style="padding: 10px; background-color: #fff; color: #000; border-radius: 16px;"></i>
+          </a>
+          <span class="item">
+            {{numberOfItems}}
+          </span>
+        </div>
+        <a class="nav-item nav-link mr-5" href="#"><div style="padding: 10px 10px 10px 40px; background-color: #fff; color: #000; border-radius: 16px;">
+          <img src="../assets/group1.png" style="width: 20px; height: 20px; background-size: cover;" alt="">
+        </div></a>
+      </div>
     </div>
-  </section>
-  <!-- Section: Links  -->
-
-  <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    © 2021 original from Foodlove
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
-<!-- Navbar -->
+  </nav>
+  
+  <!-- Body here -->
+  <router-outlet></router-outlet>
+  <!-- <app-menu ></app-menu> -->
+  <!-- Body here -->
+  
+  
+  
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-white text-muted">
+  
+    <!-- Section: Links  -->
+    <section class="bg-dark">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-6 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase mb-4" style="color: #fff; font-size: 13px;">
+              Liên hệ với chúng tôi
+            </h6>
+            <div style="width: 200px;padding: 10px 0 10px 10px; border-radius: 16px; background-color: #fff;">
+              <mat-icon>email</mat-icon> foodlove@gmail.com
+            </div>
+            <div style="margin-top: 10px; width: 200px;padding: 10px 0 10px 10px; border-radius: 16px; background-color: #fff;">
+              <mat-icon>phone</mat-icon> 09165483241
+            </div>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-6 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-center mb-4" style="color: #fff; font-size: 13px;">
+              Mạng xã hội của chúng tôi
+            </h6>
+            <div class="d-flex align-items-center justify-content-center">
+              <img src="../assets/icons/instagram.png" style="width: 50px; height: 50x; margin-right: 10px; object-fit: cover;" alt="">
+              <img src="../assets/icons/social.png" style="width: 50px; height: 50x; margin-right: 10px; object-fit: cover;" alt="">
+              <img src="../assets/icons/twitter.png" style="width: 50px; height: 50x;  margin-right: 10px;object-fit: cover;" alt="">
+            </div>
+          </div>
+        </div>
+        <!-- Grid row -->
+      </div>
+      <!-- Copyright -->
+      <div class="text-center p-4 text-white" style="background-color: rgba(0, 0, 0, 0.025);">
+        © 2021 original from Foodlove
+      </div>
+      <!-- Copyright -->
+    </section>
+    <!-- Section: Links  -->
+  
+  </footer>
+  <!-- Footer -->
+  <!-- Navbar -->
+  
+</div>

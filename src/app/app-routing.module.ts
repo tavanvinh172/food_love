@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    canActivate: [authGuard],
+    // canActivate: [authGuard],
     children: [
       {
         path: 'dashboard',
@@ -24,7 +24,23 @@ const routes: Routes = [
       {
         path: 'products',
         loadChildren: () => import('./components/products/products-routing.module').then(m => m.ProductsRoutingModule)
-      }
+      },
+      {
+        path: 'sales',
+        loadChildren: () => import('./components/sales/sales-routing.module').then(m => m.SalesRoutingModule)
+      },
+      {
+        path: 'menu',
+        loadChildren: () => import('./components/menu/menu-routing.module').then(m => m.MenuRoutingModule)
+      },
+      {
+        path: 'payment',
+        loadChildren: () => import('./components/payment/payment-routing.module').then(m => m.PaymentRoutingModule)
+      },
+      {
+        path: 'banner',
+        loadChildren: () => import('./components/banner/banner-routing.module').then(m => m.BannerRoutingModule)
+      },
     ]
   },
   {
