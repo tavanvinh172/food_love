@@ -1,0 +1,33 @@
+<div class="container">
+    <form class="row" [formGroup]="form!">
+        <mat-form-field class="col-md-3 col-lg-3 col-sm-12">
+            <mat-label>Mã đơn hàng</mat-label>
+            <mat-select formControlName="id">
+                <mat-option>
+
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="col-md-3 col-lg-3 col-sm-12">
+            <mat-label>Nhập mã đơn hàng</mat-label>
+            <input type="text" matInput formControlName = "id">
+        </mat-form-field>
+        <mat-form-field class="col-md-3 col-lg-3 col-sm-12">
+            <mat-label>Ngày đặt hàng</mat-label>
+            <input matInput formControlName = "date" [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        <mat-form-field class="col-md-3 col-lg-3 col-sm-12">
+            <mat-label>Bộ lọc khác</mat-label>
+            <mat-select>
+                <mat-option>
+
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+    </form>
+</div>

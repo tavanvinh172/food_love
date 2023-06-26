@@ -8,6 +8,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ToastrModule } from 'ngx-toastr';
 import { FilterByPipe } from 'src/app/common/filter-by.pipe';
 import { SalesComponent } from './sales.component';
+import { SaleTabFirstComponent } from './sale-tab-first/sale-tab-first.component';
 const routes: Routes = [
     {
         path: '',
@@ -19,7 +20,7 @@ const routes: Routes = [
 
 @NgModule({
     providers: [FormGroupDirective],
-    declarations: [SalesComponent],
+    declarations: [SalesComponent, SaleTabFirstComponent],
     imports: [CommonModule,RouterModule.forChild(routes), materialComponent, HttpClientModule, ToastrModule, NgxPaginationModule],
     exports: [RouterModule]
 })

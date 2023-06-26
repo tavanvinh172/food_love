@@ -36,28 +36,28 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     if(this.form?.get('username')?.value === 'admin' && this.form?.get('password')?.value === 'admin'){
-      localStorage.setItem('role', 'ADMIN')
-      this.router.navigate(['dashboard']);
+      this.service.loginUser(this.form?.value).subscribe(
+        (it) => {
+          localStorage.setItem('token', it);
+          localStorage.setItem('role', 'ADMIN')
+          this.service.getCurrentUser().subscribe(
+            value => {
+              console.log(value);
+              // ADMIN
+              if(value?.role == 0){
+                localStorage.setItem('role', 'ADMIN')
+                this.router.navigate(['dashboard']);
+              }else{
+                localStorage.setItem('role', 'NV')
+              }
+            }
+            )
+          }
+        )
     }else if(this.form?.get('username')?.value === 'nv01' && this.form?.get('password')?.value === 'nv01'){
       localStorage.setItem('role', 'NV')
+      this.router.navigate(['dashboard']);
     }
-    // this.service.loginUser(this.form?.value).subscribe(
-    //   (it) => {
-    //     localStorage.setItem('token', it);
-    //     this.service.getCurrentUser().subscribe(
-    //       value => {
-    //         console.log(value);
-    //         // ADMIN
-    //         if(value?.role == 0){
-    //           localStorage.setItem('role', 'ADMIN')
-    //           this.router.navigate(['dashboard']);
-    //         }else{
-    //           localStorage.setItem('role', 'NV')
-    //         }
-    //       }
-    //     )
-    //   }
-    // )
   }
 
 }

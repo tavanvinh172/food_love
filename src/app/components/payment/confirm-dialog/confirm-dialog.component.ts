@@ -15,6 +15,7 @@ export class ConfirmDialogComponent {
 
   navigateToHome(){
     this.router.navigate(['']);
+    localStorage.removeItem('products');
     this.dialogRef.close();
   }
 }

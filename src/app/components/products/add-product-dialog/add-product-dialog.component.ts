@@ -57,7 +57,7 @@ export class AddProductDialogComponent {
          onConfirm: () => {
           let data = this.form?.getRawValue() as ProductModel;
           data.urlImg = this.imageSrc;
-          data.price = 12000;
+          data.importPrice = 10000;
           this.service.addOrEditFood(data).subscribe({
             next: (response) => {
               if(response){

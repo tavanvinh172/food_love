@@ -9,16 +9,6 @@ import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup } from '@angular
 })
 export class SalesComponent {
 
-  form?: UntypedFormGroup;
-
-  constructor(private fb: UntypedFormBuilder){}
-
-  ngOnInit(){
-    this.form = this.fb.group({
-      id: null,
-      date: null
-    });
-  }
 
 
 

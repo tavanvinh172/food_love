@@ -27,6 +27,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { PaymentDialogComponent } from './components/payment/payment-dialog/payment-dialog.component';
 import { ConfirmDialogComponent } from './components/payment/confirm-dialog/confirm-dialog.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { SaleTabFirstComponent } from './components/sales/sale-tab-first/sale-tab-first.component';
 HC_exporting(Highcharts);
 
 @NgModule({
