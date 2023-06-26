@@ -28,6 +28,8 @@ import { PaymentDialogComponent } from './components/payment/payment-dialog/paym
 import { ConfirmDialogComponent } from './components/payment/confirm-dialog/confirm-dialog.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { SaleTabFirstComponent } from './components/sales/sale-tab-first/sale-tab-first.component';
+import { ConfirmDialogSecondComponent } from './common/confirm-dialog-second/confirm-dialog-second.component';
+import { SaleTabFirstDetailDialogComponent } from './components/sales/sale-tab-first/sale-tab-first-detail-dialog/sale-tab-first-detail-dialog.component';
 HC_exporting(Highcharts);
 
 @NgModule({
@@ -40,6 +42,8 @@ HC_exporting(Highcharts);
     CartComponent,
     PaymentDialogComponent,
     ConfirmDialogComponent,
+    ConfirmDialogSecondComponent,
+    SaleTabFirstDetailDialogComponent,
   ],
   imports: [
     AppRoutingModule,

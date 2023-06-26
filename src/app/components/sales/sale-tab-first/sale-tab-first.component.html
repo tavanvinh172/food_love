@@ -1,8 +1,8 @@
 <div class="container">
-    <form class="row" [formGroup]="form!">
+    <form class="row">
         <mat-form-field class="col-md-3 col-lg-3 col-sm-12">
             <mat-label>Mã đơn hàng</mat-label>
-            <mat-select formControlName="id">
+            <mat-select>
                 <mat-option>
 
                 </mat-option>
@@ -10,16 +10,16 @@
         </mat-form-field>
         <mat-form-field class="col-md-3 col-lg-3 col-sm-12">
             <mat-label>Nhập mã đơn hàng</mat-label>
-            <input type="text" matInput formControlName = "id">
+            <input type="text" [(ngModel)] = "orderFilter" (ngModelChange)="filterOrder($event)" [ngModelOptions]="{standalone: true}" matInput >
         </mat-form-field>
         <mat-form-field class="col-md-3 col-lg-3 col-sm-12">
             <mat-label>Ngày đặt hàng</mat-label>
-            <input matInput formControlName = "date" [matDatepicker]="picker">
+            <input matInput [(ngModel)] = "dateOrder" (ngModelChange)="filterByDate($event)" [ngModelOptions]="{standalone: true}" [matDatepicker]="picker">
             <mat-datepicker-toggle matIconSuffix [for]="picker">
-              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
             </mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
+        </mat-form-field>
         <mat-form-field class="col-md-3 col-lg-3 col-sm-12">
             <mat-label>Bộ lọc khác</mat-label>
             <mat-select>
@@ -28,6 +28,35 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        
+        <div *ngIf="dateOrder" class="d-flex algin-items-start justify-content-around">
+            <p>Đang lọc: </p>
+            <p>Ngày đặt hàng: {{ date.getDate() - dateOrder | date:'dd'}} ngày qua [{{dateOrder | date:'dd-MM-yyyy'}} - {{date | date: 'dd-MM-yyyy'}}]</p>
+            <a (click)="dateOrder = null"><img src="../../../../assets/delete.png" style="width: 10px; height: 10px;" alt="">Xoá tất cả</a>
+        </div>
+        <table class="table-container">
+            <thead>
+                <th>Mã đơn hàng</th>
+                <th>Trạng thái</th>
+                <th>Số lượng</th>
+                <th>Số tiền phải trả</th>
+                <th>Đã thanh toán</th>
+                <th>Thao tác</th>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of orderListCopy; let i = index">
+                    <tr id="{{i}}">
+                        <td>{{item?.idOrder}}</td>
+                        <td>{{item?.status === false ? 'Đang chuẩn bị' : 'Đã thanh toán'}}</td>
+                        <td>{{item?.quantity}}</td>
+                        <td>{{item?.moneyPay}}</td>
+                        <td><mat-checkbox checked="{{item?.isPay}}"></mat-checkbox></td>
+                        <td>
+                            <a (click)="watchDetail(item)"><img src="../../../../assets/info.png" alt=""></a>
+                            <a (click)="handleDelete(i)"><img src="../../../../assets/delete.png" alt=""></a>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
     </form>
 </div>

@@ -1,13 +1,13 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { ToastrService } from 'ngx-toastr';
+import { ConfirmDialoggComponent } from '../confirm-dialogg/confirm-dialogg.component';
 
 @Component({
-  selector: 'app-confirm-dialogg',
-  templateUrl: './confirm-dialogg.component.html',
-  styleUrls: ['./confirm-dialogg.component.scss']
+  selector: 'app-confirm-dialog-second',
+  templateUrl: './confirm-dialog-second.component.html',
+  styleUrls: ['./confirm-dialog-second.component.scss']
 })
-export class ConfirmDialoggComponent {
+export class ConfirmDialogSecondComponent {
 
   title?: string = 'Chú ý';
 
@@ -23,7 +23,7 @@ export class ConfirmDialoggComponent {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public defaults: any,
-    private dialogRef: MatDialogRef<ConfirmDialoggComponent>,
+    private dialogRef: MatDialogRef<ConfirmDialogSecondComponent>,
     private dialog: MatDialog,
   ){
 

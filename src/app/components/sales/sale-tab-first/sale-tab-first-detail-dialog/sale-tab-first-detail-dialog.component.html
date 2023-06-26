@@ -1,0 +1,27 @@
+<div class="container p-3">
+    <div class="row">
+        <div>
+            <h2 class = 'text-start'>Sửa thông tin người mua hàng</h2>
+            
+            <div class="d-flex align-items-start justify-content-start" style="flex-direction: column;">
+                <div class="mb-2">
+                    <label for="name" style="margin-right: 20px;">Tên người mua hàng:</label>
+                    <input matInput type="text" value="Tạ Văn Vinh">
+                </div>
+                <div class="mb-2">
+                    <label style="margin-right: 67px;" for="name">Số điện thoại:</label>
+                    <input matInput type="text" value="0868273018">
+                </div>
+                <div class="mb-2">
+                    <label style="margin-right: 108px;" for="name">Địa chỉ:</label>
+                    <input matInput type="text" value="175 Tây Sơn, Đống Đa, Hà Nội">
+                </div>
+            </div>
+
+            <div class="button-content d-flex align-items-center justify-content-end">
+                <button mat-raised-button color="primary" (click)="onConfirm()">{{buttonConfirm}}</button>
+                <button mat-raised-button style="color: #000;" (click)="onClose()">{{buttonCancel}}</button>
+            </div>
+        </div>
+    </div>
+</div>

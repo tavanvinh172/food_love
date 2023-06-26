@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    <h2>Đơn hàng</h2>
+    <h1 class="mr-3">#{{order?.idOrder}} <span style="margin-left: 20px;">{{order.date | date: 'dd/MM/yyyy'}}</span></h1>
+    <p><img src="../../../../../assets/print.png" alt=""> <span style="margin-left: 20px;">In đơn hàng</span>  <span style="margin-left: 20px;"> Thêm thao tác</span></p>
+    <div class="row col-md-12 col-lg-12 col-sm-12">
+        <div class="row col-md-7 col-lg-7 col-sm-7 card p-1">
+            <div class="d-flex align-items-center">
+                <h2 style="margin-right: 20px;">Chi tiết đơn hàng </h2>
+                <div class="shipping col-md-4 col-lg-4"> <span style="margin-left: 20px;" class="circle"></span> Chưa chuyển</div>
+            </div>
+            <h2 class="mt-2">Chưa giao</h2>
+            <hr>
+            <table>
+                <thead>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img style="width: 50px; height: 50px; object-fit: cover;" src="{{order?.productImage}}" alt="">
+                        </td>
+                        <td>{{order?.productName}}</td>
+                        <td>{{order?.productName}}</td>
+                        <td>{{order?.moneyPay + 'x' + order?.quantity}}</td>
+                        <td>{{order?.moneyPay * order?.quantity * 100}} VNĐ</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex align-items-center mt-3  p-1">
+                <p class="col-7">Ghi chú</p>
+                <div class="col-5">
+                    <img src="../../../../../assets/payment.png" alt="">Giá tiền:  <span style="margin-left: 20px;">{{order?.moneyPay * order?.quantity * 100}} VNĐ</span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mt-2">
+                <p  style="padding: 5px; border: 1px solid #000;" class="col-4">Thêm ghi chú cho đơn hàng</p>
+                <div class="col-3"></div>
+                <div class="col-5">
+                    <img src="../../../../../assets/local.png" alt="">Phí giao hàng: <span style="margin-left: 20px;">30.000 VNĐ</span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mt-2">
+                <p class="col-7"></p>
+                <div class="col-5">
+                    <img src="../../../../../assets/sell.png" alt="">Áp dụng ưu đãi: <span style="margin-left: 20px;">20.000 VNĐ</span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mt-2">
+                <p class="col-7"></p>
+                <div class="col-5">
+                    Tổng cộng: <span style="margin-left: 20px;">{{(order?.moneyPay * order?.quantity * 100) + 30000 - 20000}}</span>
+                </div>
+            </div>
+            <hr>
+            <h1><img src="../../../../../assets/credit.png" alt="">Đã thanh toán</h1>
+        </div>
+        <div class="row col-md-1 col-lg-1 col-sm-1 "></div>
+        <div class="row col-md-4 col-lg-4 col-sm-4 card ml-3">
+            <div class="d-flex align-items-center justify-content-between mt-2">
+                <h2 class="col-md-8 col-lg-8">Khách hàng</h2>
+                <img class="col-md-4 col-lg-4" style="width: 30px; height: 30px; object-fit: cover;" src="../../../../../assets/account.png" alt="">
+            </div>
+
+            <h2 class="mt-3" style="color: #508FF4;">Tạ Văn Vinh</h2>
+            <h2 class="mt-3" style="color: #508FF4;">1 Đơn hàng</h2>
+            <hr>
+            <div class="d-flex align-items-center justify-content-between mt-2">
+                <h2>Liên hệ</h2>
+                <a style="color: #508FF4;">Sửa</a>
+            </div>
+            <p>foodlove@gmail.com</p>
+            <div class="d-flex align-items-center justify-content-between mt-2">
+                <h2>Địa chỉ giao hàng</h2>
+                <a style="color: #508FF4;" (click)="editUser()">Sửa</a>
+            </div>
+            <p>Tạ Văn Vinh</p>
+            <p>0868273018</p>
+            <p>175 Tây Sơn, Đống Đa, Hà Nội</p>
+            <p>Việt Nam</p>
+            <a style="color: #508FF4; font-size: 20px;">Xem bản đồ</a>
+        </div>
+
+        <div class="d-flex align-items-end justify-content-end mt-2">
+            <a style="background-color: #F3D4C3; padding: 20px 30px; border: 1px #ccc solid;" (click)="onSuccess()">Xác nhận</a>
+        </div>
+
+    </div>
+</div>

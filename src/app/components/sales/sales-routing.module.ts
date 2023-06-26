@@ -9,18 +9,20 @@ import { ToastrModule } from 'ngx-toastr';
 import { FilterByPipe } from 'src/app/common/filter-by.pipe';
 import { SalesComponent } from './sales.component';
 import { SaleTabFirstComponent } from './sale-tab-first/sale-tab-first.component';
+import { SaleTabFirstDetailComponent } from './sale-tab-first/sale-tab-first-detail/sale-tab-first-detail.component';
 const routes: Routes = [
     {
         path: '',
         children: [
             { path: '', component: SalesComponent },
+            { path: 'order-detail', component: SaleTabFirstDetailComponent },
         ]
     },
 ];
 
 @NgModule({
     providers: [FormGroupDirective],
-    declarations: [SalesComponent, SaleTabFirstComponent],
+    declarations: [SalesComponent, SaleTabFirstComponent, SaleTabFirstDetailComponent],
     imports: [CommonModule,RouterModule.forChild(routes), materialComponent, HttpClientModule, ToastrModule, NgxPaginationModule],
     exports: [RouterModule]
 })

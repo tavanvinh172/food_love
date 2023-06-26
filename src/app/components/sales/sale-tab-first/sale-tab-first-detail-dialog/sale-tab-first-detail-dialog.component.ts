@@ -1,13 +1,12 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-confirm-dialogg',
-  templateUrl: './confirm-dialogg.component.html',
-  styleUrls: ['./confirm-dialogg.component.scss']
+  selector: 'app-sale-tab-first-detail-dialog',
+  templateUrl: './sale-tab-first-detail-dialog.component.html',
+  styleUrls: ['./sale-tab-first-detail-dialog.component.scss']
 })
-export class ConfirmDialoggComponent {
+export class SaleTabFirstDetailDialogComponent {
 
   title?: string = 'Chú ý';
 
@@ -23,7 +22,7 @@ export class ConfirmDialoggComponent {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public defaults: any,
-    private dialogRef: MatDialogRef<ConfirmDialoggComponent>,
+    private dialogRef: MatDialogRef<SaleTabFirstDetailDialogComponent>,
     private dialog: MatDialog,
   ){
 
