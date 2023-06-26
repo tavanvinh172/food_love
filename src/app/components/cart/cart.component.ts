@@ -39,6 +39,20 @@ export class CartComponent {
     }
   }
 
+  increaseValue(index){
+    let quantity = this.f.at(index).get('quantity')?.value
+    if(quantity >= 0){
+      this.f.at(index).get('quantity')?.setValue(quantity + 1);
+    }
+  }
+
+  decreaseValue(index){
+    let quantity = this.f.at(index).get('quantity')?.value
+    if(quantity !== 0){
+      this.f.at(index).get('quantity')?.setValue(quantity - 1);
+    }
+  }
+
   closeDialog(){
     this.dialogRef.close();
   }
